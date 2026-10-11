@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+  <meta name="description" content="Puente PS5 Lab: abre tu servidor de diagnóstico en tu red doméstica.">
+  <title>PS5 Lab · Abrir servidor local</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="bridge.js" defer></script>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">PS5 LAB / ACCESO LOCAL</p>
+    <h1>PS5 Lab</h1>
+    <p class="intro">Abre el diagnóstico de tu PC en esta misma ventana. Mantén el servidor iniciado y conecta la PS5 a la misma red doméstica.</p>
+    <section aria-labelledby="direct-title">
+      <h2 id="direct-title">Acceso con un clic</h2>
+      <p><a class="direct" href="http://192.168.1.18:8080/" rel="noreferrer">ABRIR SERVIDOR PS5 LAB</a></p>
+      <p class="note">Destino: http://192.168.1.18:8080/. El servidor integrado comprueba tu conexión y redirige a la sesión actual. Este enlace funciona sin JavaScript si la vista web permite navegar a la LAN.</p>
+    </section>
+    <section aria-labelledby="access-title">
+      <h2 id="access-title">Alternativa: otra IP o puerto</h2>
+      <label for="lan-url">URL LAN de esta sesión</label>
+      <p id="url-help">Empieza por http:// e incluye la IP del PC, el puerto, la clave y la barra final. Escríbela con el teclado de la consola o pégala si la interfaz lo permite.</p>
+      <input id="lan-url" type="text" inputmode="url" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="100" aria-describedby="url-help status" placeholder="Pega o escribe la URL que muestra server.py">
+      <button id="open" type="button" disabled>Abrir servidor PS5 Lab</button>
+      <button id="clear" class="secondary" type="button" disabled>Borrar campo</button>
+      <p id="status" role="status" aria-live="polite">JavaScript pendiente. Espera a que se active el botón.</p>
+      <noscript><p>Esta vista no ejecuta JavaScript. El enlace principal sigue disponible. Para otra dirección, introdúcela directamente si la vista web lo permite.</p></noscript>
+    </section>
+    <ol>
+      <li><strong>Servidor encendido.</strong> Mantén abierta la ventana del servidor en el PC.</li>
+      <li><strong>Misma LAN.</strong> PC y PS5 deben poder comunicarse en tu red doméstica.</li>
+      <li><strong>Sesión actual.</strong> El enlace principal resuelve la clave nueva automáticamente. Solo la alternativa manual necesita copiar de nuevo la URL completa al reiniciar.</li>
+    </ol>
+    <p class="note">El campo no se envía al alojamiento público ni se guarda por el código de esta página. El navegador puede conservar historial o datos de sesión. Comparte solo la dirección pública del puente, nunca la URL LAN con su clave.</p>
+    <p class="note">Una ruta C:/Users/…/index.html es un archivo del PC, no una URL pública ni una dirección accesible desde PS5.</p>
+    <footer>La apertura de enlaces locales depende de la vista web de PS5. Este puente no concede acceso a archivos internos.</footer>
+  </main>
+</body>
+</html>
